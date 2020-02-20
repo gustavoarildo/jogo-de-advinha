@@ -12,3 +12,17 @@ puts "Entre com o numero"
 chute = gets
 puts "Sera que acertou? Voce chutou " + chute
 puts numero_secreto == chute.to_i
+if numero_secreto != chute.to_i
+  puts "Tentativa 2"
+  puts "Entre com o numero"
+  chute = gets
+  puts "Sera que acertou? Voce chutou " + chute
+  puts numero_secreto == chute.to_i
+end
+if numero_secreto != chute.to_i
+    puts "Tentativa 2"
+    puts "Entre com o numero"
+    chute = gets
+    puts "Sera que acertou? Voce chutou " + chute
+    puts numero_secreto == chute.to_i
+end
