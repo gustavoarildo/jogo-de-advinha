@@ -7,22 +7,28 @@ puts "Escolhendo um numero secreto entre 0 e 200..."
 numero_secreto = 121
 puts "Escolhido... que tal adivinhar hoje o nosso numero secreto?"
 puts "\n\n\n"
-puts "Tentativa 1"
-puts "Entre com o numero"
-chute = gets
-puts "Sera que acertou? Voce chutou " + chute
-puts numero_secreto == chute.to_i
-if numero_secreto != chute.to_i
-  puts "Tentativa 2"
-  puts "Entre com o numero"
-  chute = gets
-  puts "Sera que acertou? Voce chutou " + chute
-  puts numero_secreto == chute.to_i
-end
-if numero_secreto != chute.to_i
-    puts "Tentativa 2"
+$tentativas = 1
+
+def pergunta!(numero_secreto)
+  chute = 0
+  if numero_secreto != chute.to_i
+    puts "Tentativa " + $tentativas.to_s
+    $tentativas = $tentativas + 1
     puts "Entre com o numero"
     chute = gets
     puts "Sera que acertou? Voce chutou " + chute
     puts numero_secreto == chute.to_i
+  end
+  if numero_secreto == chute.to_i
+    puts "você acertou parabens"
+  elsif numero_secreto > chute.to_i
+    puts "você chutou um valor menor que o numero secreto"
+  else
+    puts "você chutou um valor maior que o numero secreto"
+  end
+  puts "\n\n\n"
 end
+
+3.times do
+    pergunta!(numero_secreto)
+  end
